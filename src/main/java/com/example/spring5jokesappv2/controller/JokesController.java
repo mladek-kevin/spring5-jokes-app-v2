@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/")
+//@RequestMapping("/")
 @Controller
 public class JokesController {
 
@@ -16,7 +16,7 @@ public class JokesController {
     this.getJokeService = getJokeService;
   }
 
-  @GetMapping
+  @GetMapping("/")
   public String getJokes(Model model) {
     model.addAttribute("joke", this.getJokeService.getRandomQuote());
     return "index";
